@@ -44,8 +44,8 @@ body {
     height: 35px;
 }
 
-.logo-box:hover {
-    animation: pulse 1s ease-in-out;
+.logo-box:hover{
+    animation: pulse .5s ease-in-out;
 }
 
 .text-box {
@@ -128,4 +128,9 @@ body {
         opacity: 1;
         transform: translate(0);
     }
+}
+
+.btn:link,
+.btn:visited {
+
 }
