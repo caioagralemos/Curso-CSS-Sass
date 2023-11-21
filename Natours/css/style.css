@@ -1,0 +1,87 @@
+:root {
+    --light: #7ed56fc7;
+    --light-transparent: rgba(128, 214, 113, 0.8);
+    --medium: #55c57a;
+    --dark: #28b485;
+    --dark-transparent: rgba(40, 180, 133, 0.803);
+    --text-color: #777;
+    --heading-color: #fff;
+}
+
+* {
+    /* reset universal */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* */
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-color);
+    padding: 30px;
+}
+
+.header {
+    height: 95vh;
+    background-image: linear-gradient(to right bottom, var(--light-transparent), var(--dark-transparent)), url("../img/hero.jpg");
+    background-size: cover; /* se adapta ao tamanho */
+    background-position: top;
+    position: relative;
+    clip-path: polygon(0 0, 100% 0, 100% 75%, 0 90%);
+}
+
+.logo-box {
+    position: absolute; 
+    /* valores relativos a um elemento pai com position: relative */
+    top: 40px;
+    left: 40px;
+}
+
+.logo {
+    height: 35px;
+}
+
+.text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -40%); 
+}
+
+.heading-primary {
+    color: var(--heading-color);
+    text-transform: uppercase;
+    white-space: nowrap; /* nao permite quebras de linha */
+}
+
+.heading-primary-main {
+    display: block; /* isola numa linha */
+    font-size: 50px;
+    font-weight: 500;
+    letter-spacing: 10px;
+}
+
+.heading-primary-sub {
+    display: block;
+    font-size: 26px;
+    font-weight: 300;
+    letter-spacing: 15.5px;
+}
+
+@keyframes moveInLeft {
+    0% {
+        /* iniciando invisivel */
+        opacity: 0;
+    }
+
+    80% {
+        
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
