@@ -37,22 +37,22 @@ body {
     clip-path: polygon(0 0, 100% 0, 100% 75%, 0 90%);
 }
 
-.logo-box {
+.header__logo-box {
     position: absolute; 
     /* valores relativos a um elemento pai com position: relative */
     top: 4rem;
     left: 4rem;
 }
 
-.logo {
+.header__logo {
     height: 3.5rem;
 }
 
-.logo-box:hover{
+.header__logo-box:hover{
     animation: pulse .5s ease-in-out;
 }
 
-.text-box {
+.header__text-box {
     position: absolute;
     top: 40%;
     left: 50%;
@@ -68,7 +68,7 @@ body {
     backface-visibility: hidden; /* oculta o avesso do elemento e ajuda com alguns bugs */
 }
 
-.heading-primary-main {
+.heading-primary--main {
     display: block; /* isola numa linha */
     font-size: 5rem;
     font-weight: 500;
@@ -82,7 +82,7 @@ body {
     /* animation-iteration-count: 3; */
 }
 
-.heading-primary-sub {
+.heading-primary--sub {
     display: block;
     font-size: 2.6rem;
     font-weight: 300;
@@ -186,11 +186,11 @@ body {
     transition: all .4s;
 }
 
-.btn-white::after {
+.btn--white::after {
     background-color: var(--heading-color);
 }
 
-.btn-white {
+.btn--white {
     background-color: var(--heading-color);
     color: var(--text-color);
 }
@@ -200,7 +200,7 @@ body {
     opacity: 0;
 }
 
-.btn-animated {
+.btn--animated {
     animation: moveUpButton .5s ease-in-out .8s;
     animation-fill-mode: backwards; /* inicia o item com as condições do inicio da animacao aplicada (util p delays) */
 }
