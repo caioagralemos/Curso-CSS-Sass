@@ -26,8 +26,23 @@ $width-btn: 150px;
     color: $cor;
 }
 
+// Funções - não muito pratico
+@function dividir ($a, $b) {
+    @return $a / $b;
+}
+
+// Extends
+%btn-placeholder {
+    padding: 10px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 100px;
+    @include texto-link($cor-texto-claro);
+    width: $width-btn;
+}
+
 nav {
-    margin: 30px;
+    margin: dividir(60, 2) * 1px; // 30px
     background-color: $cor-primaria;
     @include clearfix(); // importando uma mixin
 }
@@ -54,18 +69,9 @@ nav {
     float: right;
 }
 
-.btn-main,
-.btn-hot {
-    padding: 10px;
-    display: inline-block;
-    text-align: center;
-    border-radius: 100px;
-    @include texto-link($cor-texto-claro);
-    width: $width-btn;
-}
-
 .btn-main {
     &:link {
+        @extend %btn-placeholder;
         background-color: $cor-secundaria;
     }
     &:hover {
@@ -75,6 +81,7 @@ nav {
 
 .btn-hot {
     &:link {
+        @extend %btn-placeholder;
         background-color: $cor-terciaria;
     }
     &:hover {

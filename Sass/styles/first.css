@@ -3,6 +3,18 @@
   padding: 0;
 }
 
+.btn-hot:link, .btn-main:link {
+  padding: 10px;
+  display: inline-block;
+  text-align: center;
+  border-radius: 100px;
+  font-family: "SF Pro";
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #eee;
+  width: 150px;
+}
+
 nav {
   margin: 30px;
   background-color: #f9ed69;
@@ -33,19 +45,6 @@ nav::after {
 
 .buttons {
   float: right;
-}
-
-.btn-main,
-.btn-hot {
-  padding: 10px;
-  display: inline-block;
-  text-align: center;
-  border-radius: 100px;
-  font-family: "SF Pro";
-  text-decoration: none;
-  text-transform: uppercase;
-  color: #eee;
-  width: 150px;
 }
 
 .btn-main:link {
