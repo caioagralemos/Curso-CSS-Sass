@@ -1,8 +1,9 @@
-$cor-primaria: #7ed56fc7;
-$cor-primaria-transparente: rgba(128, 214, 113, 0.8);
-$cor-secundaria: #55c57a;
-$cor-terciaria: #28b485;
-$cor-terciaria-transparente: rgba(40, 180, 133, 0.803);
+@use 'sass:color';
+$cor-primaria: #127700c7;
+$cor-primaria-transparente: color.change($cor-primaria, $alpha: 0.6);
+$cor-secundaria: lighten($cor-primaria, 30%);
+$cor-terciaria: darken($cor-primaria, 10%);
+$cor-terciaria-transparente: color.change($cor-terciaria, $alpha: 0.6);
 $cor-texto: #777;
 $cor-heading: #fff;
 
