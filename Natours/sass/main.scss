@@ -1,0 +1,204 @@
+$cor-primaria: #7ed56fc7;
+$cor-primaria-transparente: rgba(128, 214, 113, 0.8);
+$cor-secundaria: #55c57a;
+$cor-terciaria: #28b485;
+$cor-terciaria-transparente: rgba(40, 180, 133, 0.803);
+$cor-texto: #777;
+$cor-heading: #fff;
+
+* {
+    /* reset universal */
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit; /* */
+}
+
+root {
+    font-size: 0.625%;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    line-height: 1.7;
+    color: $cor-texto;
+    padding: 3rem;
+    box-sizing: border-box;
+}
+
+.header {
+    height: 95vh;
+    background-image: linear-gradient(to right bottom, $cor-primaria-transparente, $cor-terciaria-transparente), url("../img/hero.jpg");
+    background-size: cover; /* se adapta ao tamanho */
+    background-position: top;
+    position: relative;
+    clip-path: polygon(0 0, 100% 0, 100% 75%, 0 90%);
+}
+
+.header__logo-box {
+    position: absolute; 
+    /* valores relativos a um elemento pai com position: relative */
+    top: 4rem;
+    left: 4rem;
+}
+
+.header__logo {
+    height: 3.5rem;
+}
+
+.header__logo-box:hover{
+    animation: pulse .5s ease-in-out;
+}
+
+.header__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -40%); 
+    text-align: center;
+}
+
+.heading-primary {
+    color: $cor-heading;
+    text-transform: uppercase;
+    white-space: nowrap; /* nao permite quebras de linha */
+
+    backface-visibility: hidden; /* oculta o avesso do elemento e ajuda com alguns bugs */
+}
+
+.heading-primary--main {
+    display: block; /* isola numa linha */
+    font-size: 5rem;
+    font-weight: 500;
+    letter-spacing: 1rem;
+
+    animation-name: moveInLeft;
+    animation-duration: .8s;
+    animation-timing-function: ease-in-out;
+
+    /* animation-delay: 1s; */
+    /* animation-iteration-count: 3; */
+}
+
+.heading-primary--sub {
+    display: block;
+    font-size: 2.6rem;
+    font-weight: 300;
+    letter-spacing: 1.55rem;
+    animation: moveInRight .8s ease-in-out;
+}
+
+@keyframes pulse {
+    25% {
+        transform: scale(0.9);
+    }
+    75% {
+        transform: scale(1.1);
+    }
+}
+
+@keyframes moveInLeft {
+    0% {
+        /* iniciando invisivel */
+        opacity: 0;
+        transform: translateX(-10rem);
+    }
+
+    80% {
+        opacity: 0.8;
+        transform: translateX(2rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInRight {
+    0% {
+        /* iniciando invisivel */
+        opacity: 0;
+        transform: translateX(10rem);
+    }
+
+    80% {
+        opacity: 0.8;
+        transform: translateX(-2rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveUpButton {
+    0% {
+        opacity: 0;
+        transform: translateY(1rem);
+    }
+
+    80% {
+        opacity: 0.8;
+        transform: translateY(-1rem);
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.btn:link,
+.btn:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    display: inline-block;
+    margin-top: 2rem;
+    border-radius: 10rem;
+    transition: all .2s;
+    position: relative;
+}
+
+.btn:hover {
+    transform: translateY(-.2rem);
+    box-shadow: 0 .6rem 2rem rgba(0, 0, 0, .2); /* x, y, blur, cor */
+}
+
+.btn:active {
+    transform: translateY(-.1rem);
+    box-shadow: 0 .2rem 1rem rgba(0, 0, 0, .2); /* x, y, blur, cor */
+}
+
+.btn::after { /* criando botão escondido p transições */
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+}
+
+.btn--white::after {
+    background-color: $cor-heading;
+}
+
+.btn--white {
+    background-color: $cor-heading;
+    color: $cor-texto;
+}
+
+.btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+
+.btn--animated {
+    animation: moveUpButton .5s ease-in-out .8s;
+    animation-fill-mode: backwards; /* inicia o item com as condições do inicio da animacao aplicada (util p delays) */
+}
